@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="https://schema.org/WebSite">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teejay Don Best Collections | Luxury Fashion & Premium Apparel</title>
+    <meta name="description" content="Discover luxury fashion at Teejay Don Best Collections. Premium jackets, shirts, trousers, and accessories. Shop exclusive designer apparel with premium quality.">
+    <meta name="keywords" content="luxury fashion, premium apparel, designer clothing, jackets, shirts, trousers, accessories, Teejay Don Best">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="Teejay Don Best Collections | Luxury Fashion">
+    <meta property="og:description" content="Discover luxury fashion at Teejay Don Best Collections. Premium jackets, shirts, trousers, and accessories.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80">
+    <meta property="og:url" content="https://teejaydonbest.com">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Teejay Don Best Collections">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Teejay Don Best Collections | Luxury Fashion">
+    <meta name="twitter:description" content="Discover luxury fashion at Teejay Don Best Collections. Premium jackets, shirts, trousers, and accessories.">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80">
+    
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Teejay Don Best Collections",
+        "description": "Luxury Fashion & Premium Apparel",
+        "url": "https://teejaydonbest.com",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://teejaydonbest.com/products.html?search={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Teejay Don Best Collections",
+        "url": "https://teejaydonbest.com",
+        "logo": "https://teejaydonbest.com/logo.png",
+        "description": "Luxury Fashion & Premium Apparel",
+        "sameAs": [
+            "https://facebook.com/teejaydonbest",
+            "https://instagram.com/teejaydonbest",
+            "https://twitter.com/teejaydonbest"
+        ]
+    }
+    </script>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://teejaydonbest.com">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="style.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" as="style">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mobile-nav.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- Header -->
+    <header role="banner">
+        <div class="container header-container">
+            <a href="index.html" class="logo" aria-label="Teejay Don Best Collections Home">
+                Teejay Don Best <span>Collections</span>
+            </a>
+            
+            <button class="mobile-menu" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <nav role="navigation" aria-label="Main navigation">
+                <ul>
+                    <li><a href="index.html" class="active" aria-current="page">Home</a></li>
+                    <li><a href="products.html">Shop Collection</a></li>
+                    <li><a href="about.html">Our Story</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" role="banner" aria-labelledby="hero-heading">
+        <div class="container">
+            <h1 id="hero-heading">Luxury Meets Contemporary Style</h1>
+            <p>Discover our exclusive collection of handpicked premium apparel for the modern trendsetter. Quality craftsmanship meets innovative design.</p>
+            
+            <div class="hero-buttons">
+                <a href="products.html" class="btn" aria-label="Browse our product collection">
+                    <i class="fas fa-shopping-bag"></i> Shop Collection
+                </a>
+                <a href="#featured-products" class="btn btn-outline" aria-label="View featured products">
+                    <i class="fas fa-star"></i> Featured Items
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section id="featured-products" role="region" aria-labelledby="featured-heading">
+        <div class="container">
+            <div class="section-title">
+                <h2 id="featured-heading">Featured Collection</h2>
+                <p>Handpicked premium pieces showcasing the best of our current collection</p>
+            </div>
+            
+            <div class="loading" id="productsLoading" aria-live="polite" aria-atomic="true">
+                <div class="spinner"></div>
+                <p>Loading featured products...</p>
+            </div>
+            
+            <div class="product-grid" id="productsGrid" role="list" aria-label="Featured products list">
+                <!-- Products will be loaded here by JavaScript -->
+            </div>
+            
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="products.html" class="btn btn-outline" aria-label="View all products">
+                    View All Products <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Signals -->
+    <section class="trust-signals" role="region" aria-labelledby="trust-heading">
+        <div class="container">
+            <div class="trust-grid">
+                <div class="trust-item">
+                    <i class="fas fa-shipping-fast" aria-hidden="true"></i>
+                    <h3>Free Shipping</h3>
+                    <p>On orders over $200</p>
+                </div>
+                <div class="trust-item">
+                    <i class="fas fa-shield-alt" aria-hidden="true"></i>
+                    <h3>Secure Payment</h3>
+                    <p>100% protected transactions</p>
+                </div>
+                <div class="trust-item">
+                    <i class="fas fa-undo-alt" aria-hidden="true"></i>
+                    <h3>Easy Returns</h3>
+                    <p>30-day return policy</p>
+                </div>
+                <div class="trust-item">
+                    <i class="fas fa-headset" aria-hidden="true"></i>
+                    <h3>24/7 Support</h3>
+                    <p>Dedicated customer care</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Teejay Don Best Collections</h3>
+                    <p>Your premier destination for luxury fashion and premium apparel. Quality, style, and excellence in every piece.</p>
+                    <div class="social-links">
+                        <a href="https://facebook.com/teejaydonbest" aria-label="Follow us on Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://instagram.com/teejaydonbest" aria-label="Follow us on Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://twitter.com/teejaydonbest" aria-label="Follow us on Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://wa.me/1234567890" aria-label="Contact us on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Shop Collection</a></li>
+                        <li><a href="about.html">Our Story</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><a href="shipping.html">Shipping Info</a></li>
+                        <li><a href="returns.html">Returns & Exchanges</a></li>
+                        <li><a href="size-guide.html">Size Guide</a></li>
+                        <li><a href="care-guide.html">Care Guide</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Fashion District, New York, NY 10001</li>
+                        <li><i class="fas fa-phone"></i> <a href="tel:+1234567890">(555) 123-4567</a></li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:hello@teejaydonbest.com">hello@teejaydonbest.com</a></li>
+                        <li><i class="fab fa-whatsapp"></i> <a href="https://wa.me/1234567890">Chat on WhatsApp</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2024 Teejay Don Best Collections. All rights reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Tab Bar -->
+    <nav class="mobile-tab-bar" role="navigation" aria-label="Mobile navigation">
+        <div class="mobile-tab-bar-inner">
+            <a href="index.html" class="tab-item" aria-label="Home">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+            </a>
+            <a href="products.html" class="tab-item" aria-label="Shop">
+                <i class="fas fa-shopping-bag"></i>
+                <span>Shop</span>
+            </a>
+            <a href="about.html" class="tab-item" aria-label="Our Story">
+                <i class="fas fa-info-circle"></i>
+                <span>About</span>
+            </a>
+            <a href="contact.html" class="tab-item" aria-label="Contact">
+                <i class="fas fa-envelope"></i>
+                <span>Contact</span>
+            </a>
+        </div>
+    </nav>
+
+    <script src="auth.js"></script>
+    <script src="auth.js"></script>
+    <script src="products.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

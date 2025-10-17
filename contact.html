@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="https://schema.org/ContactPage">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Teejay Don Best Collections - Get In Touch</title>
+    <meta name="description" content="Contact Teejay Don Best Collections for inquiries, support, or collaborations. We're here to help with your luxury fashion needs.">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="keywords" content="contact Teejay Don Best, customer support, fashion inquiries, collaborations, luxury brand contact">
+    <link rel="canonical" href="https://teejaydonbest.com/contact.html">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Contact Us | Teejay Don Best Collections">
+    <meta property="og:description" content="Get in touch with our luxury fashion brand">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&w=1200&q=80">
+    <meta property="og:url" content="https://teejaydonbest.com/contact.html">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mobile-nav.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+
+    <header role="banner">
+        <div class="container header-container">
+            <a href="index.html" class="logo" aria-label="Teejay Don Best Collections Home">
+                Teejay Don Best <span>Collections</span>
+            </a>
+            <button class="mobile-menu" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav role="navigation" aria-label="Main navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Shop Collection</a></li>
+                    <li><a href="about.html">Our Story</a></li>
+                    <li><a href="contact.html" class="active" aria-current="page">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <section class="page-header">
+            <div class="container">
+                <h1>Get In Touch</h1>
+                <p>We're here to help with any questions about our collections</p>
+            </div>
+        </section>
+
+        <section class="contact-content">
+            <div class="container">
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <div class="section-header">
+                            <h2>Contact Details</h2>
+                            <div class="divider"></div>
+                        </div>
+                        
+                        <p class="contact-intro">Have questions about our collection or need help with an order? Reach out to us through any of the methods below. We're here to help!</p>
+                        
+                        <div class="contact-methods">
+                            <div class="contact-method">
+                                <div class="contact-icon">
+                                    <i class="fab fa-whatsapp"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <h3>WhatsApp Business</h3>
+                                    <p>For instant assistance and quick responses to your inquiries</p>
+                                    <a href="https://wa.me/1234567890" class="contact-link" target="_blank">
+                                        <i class="fab fa-whatsapp"></i>
+                                        Start Conversation
+                                    </a>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-method">
+                                <div class="contact-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <h3>Email Support</h3>
+                                    <p>Send us detailed inquiries and we'll respond within 24 hours</p>
+                                    <a href="mailto:contact@teejaydonbest.com" class="contact-link">
+                                        <i class="fas fa-envelope"></i>
+                                        contact@teejaydonbest.com
+                                    </a>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-method">
+                                <div class="contact-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <h3>Visit Our Showroom</h3>
+                                    <p>Experience our collection in person at our luxury boutique</p>
+                                    <div class="address">
+                                        <i class="fas fa-building"></i>
+                                        123 Fashion District<br>
+                                        New York, NY 10001
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-method">
+                                <div class="contact-icon">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <h3>Business Hours</h3>
+                                    <p>We're available to assist you during these hours</p>
+                                    <div class="business-hours">
+                                        <div class="hour-item">
+                                            <span>Mon - Fri:</span>
+                                            <span>9:00 AM - 6:00 PM</span>
+                                        </div>
+                                        <div class="hour-item">
+                                            <span>Saturday:</span>
+                                            <span>10:00 AM - 4:00 PM</span>
+                                        </div>
+                                        <div class="hour-item">
+                                            <span>Sunday:</span>
+                                            <span>Closed</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-form-container">
+                        <div class="form-header">
+                            <h2>Send Us a Message</h2>
+                            <p>Fill out the form below and we'll get back to you promptly</p>
+                        </div>
+                        
+                        <form class="contact-form" id="contactForm">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="name">
+                                        <i class="fas fa-user"></i>
+                                        Full Name
+                                    </label>
+                                    <input type="text" id="name" name="name" required class="form-control" placeholder="Enter your full name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">
+                                        <i class="fas fa-envelope"></i>
+                                        Email Address
+                                    </label>
+                                    <input type="email" id="email" name="email" required class="form-control" placeholder="Enter your email address">
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="subject">
+                                    <i class="fas fa-tag"></i>
+                                    Subject
+                                </label>
+                                <select id="subject" name="subject" required class="form-control">
+                                    <option value="">Select inquiry type</option>
+                                    <option value="product-inquiry">Product Inquiry</option>
+                                    <option value="order-support">Order Support</option>
+                                    <option value="size-guide">Size Guide Help</option>
+                                    <option value="collaboration">Collaboration</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message">
+                                    <i class="fas fa-comment"></i>
+                                    Message
+                                </label>
+                                <textarea id="message" name="message" rows="6" required class="form-control" placeholder="Tell us how we can help you..."></textarea>
+                                <div class="char-count">
+                                    <span id="charCount">0</span> / 1000 characters
+                                </div>
+                            </div>
+                            
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-block">
+                                    <i class="fas fa-paper-plane"></i>
+                                    Send Message
+                                </button>
+                            </div>
+                        </form>
+                        
+                        <div class="form-footer">
+                            <p>
+                                <i class="fas fa-shield-alt"></i>
+                                Your information is secure and will never be shared with third parties.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="map-section">
+            <div class="container">
+                <div class="section-header centered">
+                    <h2>Find Our Boutique</h2>
+                    <div class="divider centered"></div>
+                    <p>Visit us in the heart of the fashion district</p>
+                </div>
+                
+                <div class="map-placeholder">
+                    <div class="map-content">
+                        <i class="fas fa-map-marked-alt"></i>
+                        <h3>123 Fashion District</h3>
+                        <p>New York, NY 10001</p>
+                        <div class="map-features">
+                            <div class="map-feature">
+                                <i class="fas fa-train"></i>
+                                <span>Near subway station</span>
+                            </div>
+                            <div class="map-feature">
+                                <i class="fas fa-parking"></i>
+                                <span>Parking available</span>
+                            </div>
+                            <div class="map-feature">
+                                <i class="fas fa-wheelchair"></i>
+                                <span>Wheelchair accessible</span>
+                            </div>
+                        </div>
+                        <a href="https://maps.google.com" class="btn btn-outline" target="_blank">
+                            <i class="fas fa-directions"></i>
+                            Get Directions
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Teejay Don Best Collections</h3>
+                    <p>Your destination for luxury and style.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Shop Collection</a></li>
+                        <li><a href="about.html">Our Story</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2024 Teejay Don Best Collections. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Tab Bar -->
+    <nav class="mobile-tab-bar" role="navigation" aria-label="Mobile navigation">
+        <div class="mobile-tab-bar-inner">
+            <a href="index.html" class="tab-item" aria-label="Home">
+                <i class="fas fa-home"></i>
+            </a>
+            <a href="products.html" class="tab-item" aria-label="Shop">
+                <i class="fas fa-shopping-bag"></i>
+            </a>
+            <a href="about.html" class="tab-item" aria-label="Our Story">
+                <i class="fas fa-info-circle"></i>
+            </a>
+            <a href="contact.html" class="tab-item" aria-label="Contact">
+                <i class="fas fa-envelope"></i>
+            </a>
+        </div>
+    </nav>
+
+    <script src="auth.js"></script>
+    <script src="mobile-nav.js"></script>
+    <script>
+        
+            
+            // Mobile menu functionality
+            const mobileMenu = document.querySelector('.mobile-menu');
+            const nav = document.querySelector('nav');
+            
+            if (mobileMenu && nav) {
+                mobileMenu.addEventListener('click', function() {
+                    nav.classList.toggle('active');
+                    mobileMenu.classList.toggle('active');
+                    mobileMenu.setAttribute('aria-expanded', 
+                        mobileMenu.getAttribute('aria-expanded') === 'true' ? 'false' : 'true'
+                    );
+                });
+            }
+
+            // Character count for message textarea
+            const messageTextarea = document.getElementById('message');
+            const charCount = document.getElementById('charCount');
+            
+            if (messageTextarea && charCount) {
+                messageTextarea.addEventListener('input', function() {
+                    charCount.textContent = this.value.length;
+                    
+                    if (this.value.length > 1000) {
+                        charCount.style.color = 'var(--danger)';
+                    } else if (this.value.length > 800) {
+                        charCount.style.color = 'var(--warning)';
+                    } else {
+                        charCount.style.color = 'var(--success)';
+                    }
+                });
+            }
+
+            // Contact form submission
+            const contactForm = document.getElementById('contactForm');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Basic validation
+                    const name = document.getElementById('name').value.trim();
+                    const email = document.getElementById('email').value.trim();
+                    const subject = document.getElementById('subject').value;
+                    const message = document.getElementById('message').value.trim();
+                    
+                    if (!name || !email || !subject || !message) {
+                        showNotification('Please fill in all required fields', 'error');
+                        return;
+                    }
+                    
+                    if (message.length > 1000) {
+                        showNotification('Message must be less than 1000 characters', 'error');
+                        return;
+                    }
+                    
+                    // Simulate form submission
+                    showLoading('Sending your message...');
+                    
+                    setTimeout(() => {
+                        hideLoading();
+                        showNotification('Thank you for your message! We\'ll get back to you within 24 hours.', 'success');
+                        contactForm.reset();
+                        charCount.textContent = '0';
+                        charCount.style.color = 'var(--success)';
+                    }, 2000);
+                });
+            }
+        
+    </script>
+
+    <style>
+        /* Contact Page Specific Styles */
+        .contact-content {
+            padding: 80px 0;
+            background: var(--light);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .section-header {
+            margin-bottom: 30px;
+        }
+
+        .section-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .divider {
+            width: 50px;
+            height: 3px;
+            background: var(--secondary);
+        }
+
+        .section-header.centered {
+            text-align: center;
+        }
+
+        .divider.centered {
+            margin: 0 auto;
+        }
+
+        .contact-intro {
+            font-size: 1.1rem;
+            color: var(--gray);
+            margin-bottom: 40px;
+            line-height: 1.7;
+        }
+
+        .contact-methods {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .contact-method {
+            display: flex;
+            gap: 20px;
+            padding: 25px;
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+
+        .contact-method:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .contact-icon {
+            flex-shrink: 0;
+            width: 60px;
+            height: 60px;
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--secondary);
+            font-size: 1.5rem;
+        }
+
+        .contact-details h3 {
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+            color: var(--primary);
+        }
+
+        .contact-details p {
+            color: var(--gray);
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+
+        .contact-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--secondary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .contact-link:hover {
+            color: var(--primary);
+        }
+
+        .address {
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        .address i {
+            color: var(--secondary);
+            margin-right: 8px;
+        }
+
+        .business-hours {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .hour-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 5px 0;
+        }
+
+        .hour-item span:first-child {
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .hour-item span:last-child {
+            color: var(--gray);
+        }
+
+        .contact-form-container {
+            background: white;
+            padding: 40px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+
+        .form-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .form-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .form-header p {
+            color: var(--gray);
+        }
+
+        .contact-form .form-group label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+
+        .contact-form .form-group label i {
+            color: var(--secondary);
+            width: 16px;
+        }
+
+        .char-count {
+            text-align: right;
+            font-size: 0.8rem;
+            color: var(--success);
+            margin-top: 5px;
+        }
+
+        .form-actions {
+            margin-top: 30px;
+        }
+
+        .form-footer {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            text-align: center;
+        }
+
+        .form-footer p {
+            color: var(--gray);
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .form-footer i {
+            color: var(--success);
+        }
+
+        .map-section {
+            padding: 80px 0;
+        }
+
+        .map-placeholder {
+            height: 400px;
+            background: linear-gradient(-45deg, #000000 0%, #dbd7d7 100%);
+            border-radius: var(--border-radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            margin-top: 40px;
+        }
+
+        .map-content {
+            text-align: center;
+        }
+
+        .map-content i {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+
+        .map-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .map-content p {
+            margin-bottom: 25px;
+            opacity: 0.9;
+        }
+
+        .map-features {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
+
+        .map-feature {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 968px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .contact-method {
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .contact-content {
+                padding: 60px 0;
+            }
+
+            .section-header h2 {
+                font-size: 1.8rem;
+            }
+
+            .contact-form-container {
+                padding: 30px 25px;
+            }
+
+            .form-row {
+                flex-direction: column;
+            }
+
+            .map-features {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .map-placeholder {
+                height: 300px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .contact-method {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .contact-icon {
+                align-self: center;
+            }
+
+            .form-header h2 {
+                font-size: 1.6rem;
+            }
+
+            .contact-form-container {
+                padding: 25px 20px;
+            }
+
+            .business-hours {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</body>
+</html>

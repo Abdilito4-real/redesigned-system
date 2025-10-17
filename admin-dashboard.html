@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Admin Panel - Hon. Hussaini Abdulkarim</title>
+    <!-- Add meta description -->
+
+    <meta name="robots" content="noindex, nofollow">
+
+
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script>
+        // Initialize Supabase client globally
+        const SUPABASE_URL = 'https://sjqxqtctfjzjoqgwsbsm.supabase.co';
+        const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNqcXhxdGN0Zmp6am9xZ3dzYnNtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjA1NDA3MTUsImV4cCI6MjA3NjExNjcxNX0.0Ruz06E7_KL48ZnIQUVNeHlMqCL-zdtsckn9IrFD_08';
+        window.supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+    </script>
+</head>
+<body class="admin-page">
+
+    <div id="adminLoginSection" class="auth-page" style="display: none;">
+        <div class="auth-container">
+            <div class="auth-box">
+                <div class="auth-header">
+                    <a href="index.html" class="auth-logo">
+                        <i class="fas fa-crown"></i>
+                        Teejay Don Best <span>Collections</span>
+                    </a>
+                    <h1>Admin Portal</h1>
+                    <p>Sign in to manage your store</p>
+                </div>
+    
+                <div id="authMessage" class="auth-message" style="display: none;"></div>
+    
+                <form class="auth-form" id="loginForm">
+                    <div class="form-group">
+                        <label for="email" class="form-label">
+                            <i class="fas fa-envelope"></i>
+                            Email Address
+                        </label>
+                        <input type="email" id="email" name="email" required class="form-control" 
+                               placeholder="admin@teejaydonbest.com" autocomplete="email">
+                    </div>
+    
+                    <div class="form-group">
+                        <label for="password" class="form-label">
+                            <i class="fas fa-lock"></i>
+                            Password
+                        </label>
+                        <div class="password-input">
+                            <input type="password" id="password" name="password" required class="form-control" 
+                                   placeholder="Enter your password" autocomplete="current-password">
+                            <button type="button" class="password-toggle" id="passwordToggle">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+    
+                    <button type="submit" class="btn btn-block auth-submit" id="loginButton">
+                        <i class="fas fa-sign-in-alt"></i>
+                        Sign In
+                    </button>
+                </form>
+    
+                <div class="auth-footer">
+                    <a href="index.html" class="back-link">
+                        <i class="fas fa-arrow-left"></i>
+                        Back to Store
+                    </a>
+                </div>
+            </div>
+    
+            <div class="auth-features">
+                <div class="feature-item">
+                    <i class="fas fa-boxes"></i>
+                    <h3>Product Management</h3>
+                    <p>Manage your entire product catalog with ease</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Sales Analytics</h3>
+                    <p>Track performance and make data-driven decisions</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-cogs"></i>
+                    <h3>Store Settings</h3>
+                    <p>Configure your store and update content</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="adminDashboard" style="display: none;">
+        <header class="admin-header">
+            <div class="container header-container">
+                <div class="logo">
+                    <i class="fas fa-crown"></i>
+                    Teejay Don Best <span>Collections</span>
+                    <small>Admin</small>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html" class="btn-outline">
+                            <i class="fas fa-store"></i>
+                            View Store
+                        </a></li>
+                        <li><button id="logoutBtn" class="btn-outline">
+                            <i class="fas fa-sign-out-alt"></i>
+                            Logout
+                        </button></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+    
+        <main class="admin-main">
+            <div class="admin-sidebar">
+                <nav class="sidebar-nav">
+                    <div class="nav-section">
+                        <h3>Main</h3>
+                        <ul>
+                            <li class="nav-item active">
+                                <a href="#dashboard-view">
+                                    <i class="fas fa-tachometer-alt"></i>
+                                    Dashboard
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="nav-section">
+                        <h3>Products</h3>
+                        <ul>
+                            <li class="nav-item">
+                                <a href="#products-view">
+                                    <i class="fas fa-boxes"></i>
+                                    All Products
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#product-form-view" class="add-product-btn">
+                                    <i class="fas fa-plus-circle"></i>
+                                    Add New
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="nav-section">
+                        <h3>Analytics</h3>
+                        <ul>
+                            <li class="nav-item">
+                                <a href="#analytics-view">
+                                    <i class="fas fa-chart-bar"></i>
+                                    Reports
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+    
+            <div class="admin-content">
+                <!-- Dashboard View -->
+               <div id="dashboard-view" class="admin-view">
+                    <div class="admin-header-section">
+                        <h1>Store Dashboard</h1>
+                        <p>An overview of your store's performance and products.</p>
+                    </div>
+    
+                    <!-- Stats Cards -->
+                    <div class="admin-stats">
+                        <div class="stat-card">
+                            <div class="stat-icon"><i class="fas fa-box"></i></div>
+                            <div class="stat-info">
+                                <h3>Total Products</h3>
+                                <p id="totalProducts">0</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon"><i class="fas fa-star"></i></div>
+                            <div class="stat-info">
+                                <h3>Featured Products</h3>
+                                <p id="featuredProducts">0</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon"><i class="fas fa-dollar-sign"></i></div>
+                            <div class="stat-info">
+                                <h3>Total Inventory Value</h3>
+                                <p id="totalValue">$0</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon"><i class="fas fa-boxes"></i></div>
+                            <div class="stat-info">
+                                <h3>Total Stock</h3>
+                                <p id="totalStock">0</p>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <!-- Quick Actions -->
+                    <div class="admin-actions">
+                        <button class="btn add-product-btn">
+                            <i class="fas fa-plus"></i> Add New Product
+                        </button>
+                        <a href="#products-view" class="btn btn-outline">
+                            <i class="fas fa-boxes"></i> Manage Products
+                        </a>
+                    </div>
+    
+                    <!-- Recent Products -->
+                    <div class="recent-products">
+                        <div class="section-header">
+                            <h2>Recent Products</h2>
+                            <a href="#products-view" class="btn-link">View All</a>
+                        </div>
+                        <div id="recentProducts" class="products-grid-mini">
+                            <!-- Recent products will be loaded here -->
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Products List View -->
+                <div id="products-view" class="admin-view" style="display: none;">
+                    <div class="admin-header-section">
+                        <h1>Product Management</h1>
+                        <p>Manage all products in your store</p>
+                    </div>
+    
+                    <div class="products-actions">
+                        <button class="btn add-product-btn">
+                            <i class="fas fa-plus"></i> Add New Product
+                        </button>
+                        <div class="products-filters">
+                            <div class="search-box" style="display: none;">
+                                <i class="fas fa-search"></i>
+                                <input type="text" id="productSearch" placeholder="Search products..." class="form-control">
+                            </div>
+                            <select id="categoryFilter" class="form-control">
+                                <option value="">All Categories</option>
+                                <option value="Jackets">Jackets</option>
+                                <option value="Shirts">Shirts</option>
+                                <option value="Trousers">Trousers</option>
+                                <option value="Jeans">Jeans</option>
+                                <option value="Footwear">Footwear</option>
+                                <option value="Accessories">Accessories</option>
+                            </select>
+                        </div>
+                    </div>
+    
+                    <div class="products-table-container">
+                        <div class="loading" id="productsLoading">
+                            <div class="spinner"></div>
+                            <p>Loading products...</p>
+                        </div>
+                        <div id="productsTable">
+                            <!-- Products table will be loaded here by admin.js -->
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Add/Edit Product Form View -->
+                <div id="product-form-view" class="admin-view" style="display: none;">
+                    <div class="admin-header-section">
+                        <h1 id="form-title">Add New Product</h1>
+                        <p id="form-subtitle">Fill in the product details below</p>
+                    </div>
+    
+                    <div class="form-container">
+                        <form id="productForm">
+                            <input type="hidden" id="productId">
+                            <input type="hidden" id="imageUrl">
+                            
+                            <div class="form-grid">
+                                <div class="form-main-content">
+                                    <div class="form-group">
+                                        <label for="title"><i class="fas fa-heading"></i> Product Title *</label>
+                                        <input type="text" id="title" class="form-control" required placeholder="e.g., Premium Leather Jacket">
+                                    </div>
+    
+                                    <div class="form-group">
+                                        <label for="description"><i class="fas fa-align-left"></i> Description</label>
+                                        <textarea id="description" class="form-control" rows="6" placeholder="Enter a detailed product description..."></textarea>
+                                    </div>
+    
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="price"><i class="fas fa-dollar-sign"></i> Price *</label>
+                                            <input type="number" id="price" class="form-control" required placeholder="e.g., 299" min="0" step="0.01">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="stock"><i class="fas fa-boxes"></i> Stock Quantity</label>
+                                            <input type="number" id="stock" class="form-control" placeholder="e.g., 25" min="0" value="0">
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <div class="form-sidebar-content">
+                                    <div class="form-group">
+                                        <label for="imageFile"><i class="fas fa-image"></i> Product Image *</label>
+                                        <div class="image-preview" id="imagePreview">
+                                            <img src="" class="image-preview-image" alt="Image Preview">
+                                            <div class="image-preview-text">
+                                                <i class="fas fa-cloud-upload-alt"></i>
+                                                <span>Click to upload or drag & drop</span>
+                                            </div>
+                                        </div>
+                                        <input type="file" id="imageFile" accept="image/*" style="display: none;">
+                                        <div class="form-hint">Recommended size: 800x800px</div>
+                                    </div>
+    
+                                    <div class="form-group">
+                                        <label for="category"><i class="fas fa-tag"></i> Category *</label>
+                                        <select id="category" class="form-control" required>
+                                            <option value="">Select Category</option>
+                                            <option value="Jackets">Jackets</option>
+                                            <option value="Shirts">Shirts</option>
+                                            <option value="Trousers">Trousers</option>
+                                            <option value="Jeans">Jeans</option>
+                                            <option value="Footwear">Footwear</option>
+                                            <option value="Accessories">Accessories</option>
+                                        </select>
+                                    </div>
+    
+                                    <div class="form-group">
+                                        <label class="checkbox-label large">
+                                            <input type="checkbox" id="featured">
+                                            <span class="checkmark"></span>
+                                            <div class="checkbox-content">
+                                                <strong>Featured Product</strong>
+                                                <span>Show on homepage</span>
+                                            </div>
+                                        </label>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="checkbox-label large">
+                                            <input type="checkbox" id="active" checked>
+                                            <span class="checkmark"></span>
+                                            <div class="checkbox-content">
+                                                <strong>Active Product</strong>
+                                                <span>Visible to customers</span>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="form-actions">
+                                <button type="submit" class="btn">
+                                    <i class="fas fa-save"></i> Save Product
+                                </button>
+                                <button type="button" class="btn-outline">
+                                    <i class="fas fa-times"></i> Cancel
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+    
+                <!-- Analytics View -->
+                <div id="analytics-view" class="admin-view" style="display: none;">
+                    <div class="admin-header-section">
+                        <h1>Store Analytics</h1>
+                        <p>Track your store performance and insights</p>
+                    </div>
+                    <div class="analytics-container">
+                        <div class="analytics-card">
+                            <h3>Performance Overview</h3>
+                            <div class="analytics-stats">
+                                <div class="analytics-stat">
+                                    <span class="stat-value" id="totalViews">0</span>
+                                    <span class="stat-label">Total Views</span>
+                                </div>
+                                <div class="analytics-stat">
+                                    <span class="stat-value" id="conversionRate">0%</span>
+                                    <span class="stat-label">Conversion Rate</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="auth.js"></script>
+    <script src="products.js"></script>
+    <script src="admin.js"></script>
+</body>
+</html>

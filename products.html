@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="https://schema.org/ItemList">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop Collection | Teejay Don Best Collections - Luxury Fashion</title>
+    <meta name="description" content="Browse our complete collection of luxury fashion including premium jackets, shirts, trousers, and accessories. Filter by category and find your perfect style.">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="keywords" content="luxury fashion collection, premium jackets, designer shirts, trousers, accessories, shop online">
+    <link rel="canonical" href="https://teejaydonbest.com/products.html">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Shop Collection | Teejay Don Best Collections">
+    <meta property="og:description" content="Browse our complete luxury fashion collection">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&w=1200&q=80">
+    <meta property="og:url" content="https://teejaydonbest.com/products.html">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mobile-nav.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+
+
+    <header role="banner">
+        <div class="container header-container">
+            <a href="index.html" class="logo" aria-label="Teejay Don Best Collections Home">
+                Teejay Don Best <span>Collections</span>
+            </a>
+            <button class="mobile-menu" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav role="navigation" aria-label="Main navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html" class="active" aria-current="page">Shop Collection</a></li>
+                    <li><a href="about.html">Our Story</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                  </ul>
+            </nav>
+        </div>
+    </header>
+    
+
+    <main id="main-content">
+        <section class="page-header">
+            <div class="container">
+                <h1>Our Collection</h1>
+                <p>Browse our handpicked selection of premium wears</p>
+                
+                <div class="filter-section">
+                    <div class="filter-grid">
+                        <div class="form-group filter-search">
+                            <div class="search-wrapper">
+                                <i class="fas fa-search search-icon"></i>
+                                <input type="text" id="filterSearch" class="form-control" placeholder="Search products...">
+                                <button class="clear-search" id="clearSearch" style="display: none;">
+                                    <i class="fas fa-times"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <div class="select-wrapper">
+                                <i class="fas fa-tag select-icon"></i>
+                                <select id="filterCategory" class="form-control">
+                                    <option value="">All Categories</option>
+                                    <option value="Jackets">Jackets</option>
+                                    <option value="Shirts">Shirts</option>
+                                    <option value="Trousers">Trousers</option>
+                                    <option value="Jeans">Jeans</option>
+                                    <option value="Footwear">Footwear</option>
+                                    <option value="Accessories">Accessories</option>
+                                </select>
+                                <i class="fas fa-chevron-down select-arrow"></i>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <div class="select-wrapper">
+                                <i class="fas fa-sort select-icon"></i>
+                                <select id="sortBy" class="form-control">
+                                    <option value="created_at">Newest First</option>
+                                    <option value="price_asc">Price: Low to High</option>
+                                    <option value="price_desc">Price: High to Low</option>
+                                    <option value="name_asc">Name: A to Z</option>
+                                    <option value="name_desc">Name: Z to A</option>
+                                </select>
+                                <i class="fas fa-chevron-down select-arrow"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-mobile-controls">
+                        <button class="btn btn-outline" id="mobileFilterToggle">
+                            <i class="fas fa-filter"></i>
+                            Filters
+                        </button>
+                        <div class="results-count">
+                            <span id="productsCount">Loading products...</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="properties-section">
+            <div class="container">
+                <div class="properties-main">
+                    <div class="loading" id="productsLoading">
+                        <div class="spinner"></div>
+                        <p>Loading products...</p>
+                    </div>
+
+                    <div class="product-grid" id="productsGrid">
+                        <!-- Products will be loaded here -->
+                    </div>
+
+                    <div class="load-more-container" id="loadMoreContainer" style="display: none;">
+                        <button class="btn btn-outline" id="loadMoreBtn">
+                            <i class="fas fa-redo"></i>
+                            Load More Products
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Teejay Don Best Collections</h3>
+                    <p>Your destination for luxury and style.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Shop</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2024 Teejay Don Best Collections. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Tab Bar -->
+    <nav class="mobile-tab-bar" role="navigation" aria-label="Mobile navigation">
+        <div class="mobile-tab-bar-inner">
+            <a href="index.html" class="tab-item" aria-label="Home">
+                <i class="fas fa-home"></i>
+            </a>
+            <a href="products.html" class="tab-item" aria-label="Shop">
+                <i class="fas fa-shopping-bag"></i>
+            </a>
+            <a href="about.html" class="tab-item" aria-label="Our Story">
+                <i class="fas fa-info-circle"></i>
+            </a>
+            <a href="contact.html" class="tab-item" aria-label="Contact">
+                <i class="fas fa-envelope"></i>
+            </a>
+        </div>
+    </nav>
+
+    <script src="auth.js"></script>
+    <script src="products.js"></script>
+</body>
+</html>
